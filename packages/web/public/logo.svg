@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" fill="none">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="120" y2="120" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#007AFF"/>
+      <stop offset="100%" stop-color="#00C6FF"/>
+    </linearGradient>
+    <linearGradient id="cross" x1="40" y1="30" x2="80" y2="90" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#FFFFFF"/>
+      <stop offset="100%" stop-color="#E3F2FD"/>
+    </linearGradient>
+    <filter id="shadow">
+      <feDropShadow dx="0" dy="2" stdDeviation="3" flood-opacity="0.15"/>
+    </filter>
+  </defs>
+  <!-- 圆角矩形背景 -->
+  <rect x="8" y="8" width="104" height="104" rx="26" fill="url(#bg)" filter="url(#shadow)"/>
+  <!-- 十字医疗标志 -->
+  <rect x="48" y="28" width="24" height="64" rx="6" fill="url(#cross)"/>
+  <rect x="28" y="48" width="64" height="24" rx="6" fill="url(#cross)"/>
+  <!-- 药丸装饰圆点 -->
+  <circle cx="30" cy="30" r="5" fill="rgba(255,255,255,0.3)"/>
+  <circle cx="90" cy="90" r="7" fill="rgba(255,255,255,0.2)"/>
+  <circle cx="95" cy="30" r="4" fill="rgba(255,255,255,0.25)"/>
+</svg>

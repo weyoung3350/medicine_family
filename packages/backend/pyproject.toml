@@ -1,0 +1,16 @@
+[project]
+name = "medicine-family-backend"
+version = "2.0.0"
+description = "家庭健康管家 - 后端 API (FastAPI + SQLAlchemy + PostgreSQL)"
+requires-python = ">=3.11"
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["."]
+
+# 快速上手：
+# 1. cd packages/backend
+# 2. make setup      ← 创建 venv + 安装依赖
+# 3. make test       ← 运行 52 个测试
+# 4. make dev        ← 启动开发服务器 (端口 3000)
+# 5. make seed       ← 生成演示数据 (13800138000 / 123456)

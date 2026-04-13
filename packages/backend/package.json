@@ -1,0 +1,12 @@
+{
+  "name": "backend",
+  "version": "2.0.0",
+  "private": true,
+  "scripts": {
+    "dev": ".venv/bin/uvicorn app.main:app --host 0.0.0.0 --port 3000 --reload",
+    "start": ".venv/bin/uvicorn app.main:app --host 0.0.0.0 --port 3000",
+    "test": ".venv/bin/pytest -v",
+    "seed": ".venv/bin/python scripts/seed.py",
+    "migrate": ".venv/bin/alembic upgrade head"
+  }
+}

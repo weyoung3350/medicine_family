@@ -1,0 +1,27 @@
+node_modules/
+dist/
+.env
+.env.local
+*.log
+.DS_Store
+coverage/
+
+# Flutter
+packages/mobile/.dart_tool/
+packages/mobile/build/
+packages/mobile/.flutter-plugins
+packages/mobile/.flutter-plugins-dependencies
+
+# Python
+.venv/
+__pycache__/
+*.pyc
+.pytest_cache/
+packages/backend/uploads/
+
+# IDE
+.idea/
+*.swp
+*.swo
+.claude/
+packages/mobile/android/local.properties

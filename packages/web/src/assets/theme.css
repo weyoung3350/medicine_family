@@ -1,0 +1,100 @@
+:root {
+  /* 主色 - 清透医疗蓝绿 */
+  --primary: #0F7C9A;
+  --primary-dark: #085D78;
+  --primary-light: #DDF6F8;
+
+  /* 侧边栏 - 深海蓝渐变 */
+  --sidebar-bg: linear-gradient(180deg, #10253A 0%, #123C4A 52%, #17412F 100%);
+  --sidebar-text: #B9CCD0;
+  --sidebar-active: #58D6C8;
+  --sidebar-active-bg: rgba(88, 214, 200, 0.16);
+
+  /* 状态色 */
+  --status-taken: #4CAF50;      /* 已服用 - 绿 */
+  --status-pending: #FF9500;    /* 待服用 - 暖橙 */
+  --status-missed: #F44336;     /* 漏服 - 红 */
+  --status-skipped: #9E9E9E;    /* 已跳过 - 灰 */
+  --status-expiring: #F44336;   /* 临期 - 红 */
+  --status-low-stock: #FF9500;  /* 库存低 - 橙 */
+
+  /* 背景 */
+  --bg-main: #EEF6F4;
+  --bg-card: #FFFFFF;
+  --bg-highlight: #DDF6F8;
+
+  /* 文字 */
+  --text-primary: #19313A;
+  --text-secondary: #5A737A;
+  --text-hint: #92A7AA;
+
+  /* 点缀 - 暖橙 */
+  --accent: #F2A14A;
+  --accent-light: #FFF3DE;
+  --surface-border: rgba(16, 73, 87, 0.1);
+  --shadow-soft: 0 18px 50px rgba(24, 72, 83, 0.12);
+}
+
+body {
+  margin: 0;
+  font-family: 'Avenir Next', 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif;
+  background:
+    radial-gradient(circle at 16% 12%, rgba(88, 214, 200, 0.22), transparent 28rem),
+    radial-gradient(circle at 82% 4%, rgba(242, 161, 74, 0.14), transparent 22rem),
+    linear-gradient(135deg, #F8FBF7 0%, #EEF6F4 42%, #E8F1EF 100%);
+  color: var(--text-primary);
+  min-width: 320px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+/* Element Plus 主色覆盖 */
+.el-button--primary {
+  --el-button-bg-color: var(--primary) !important;
+  --el-button-border-color: var(--primary) !important;
+  --el-button-hover-bg-color: var(--primary-dark) !important;
+  --el-button-hover-border-color: var(--primary-dark) !important;
+}
+.el-button--primary:hover {
+  --el-button-hover-bg-color: var(--primary-dark) !important;
+  --el-button-hover-border-color: var(--primary-dark) !important;
+}
+
+/* 卡片统一圆角和阴影 */
+.el-card {
+  border-radius: 20px !important;
+  border: 1px solid var(--surface-border) !important;
+  box-shadow: var(--shadow-soft) !important;
+  background: rgba(255, 255, 255, 0.88) !important;
+  backdrop-filter: blur(16px);
+}
+
+/* 标签页下划线颜色 */
+.el-tabs__active-bar {
+  background-color: var(--primary) !important;
+}
+.el-tabs__item.is-active {
+  color: var(--primary) !important;
+}
+
+/* 选中菜单样式 */
+.el-menu-item.is-active {
+  color: var(--sidebar-active) !important;
+  background: var(--sidebar-active-bg) !important;
+  border-right: 3px solid var(--sidebar-active);
+}
+
+/* 统计数字颜色 */
+.el-statistic__number {
+  color: var(--primary) !important;
+  font-weight: 700 !important;
+}
+
+.el-input__wrapper,
+.el-select__wrapper,
+.el-textarea__inner {
+  border-radius: 12px !important;
+  box-shadow: 0 0 0 1px rgba(16, 73, 87, 0.12) inset !important;
+}
