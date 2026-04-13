@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+
+<html lang="zh-CN"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>FamilyCare - 家庭医疗管理</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;700;800&amp;family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "surface-container": "#eceef0",
+                    "secondary": "#495c95",
+                    "on-background": "#191c1e",
+                    "primary": "#004ac6",
+                    "tertiary-fixed-dim": "#ffb596",
+                    "surface": "#f7f9fb",
+                    "on-primary-container": "#eeefff",
+                    "inverse-primary": "#b4c5ff",
+                    "tertiary": "#943700",
+                    "error": "#ba1a1a",
+                    "outline-variant": "#c3c6d7",
+                    "tertiary-fixed": "#ffdbcd",
+                    "on-secondary-container": "#394c84",
+                    "outline": "#737686",
+                    "secondary-fixed-dim": "#b4c5ff",
+                    "on-secondary-fixed": "#00174b",
+                    "on-primary": "#ffffff",
+                    "surface-container-highest": "#e0e3e5",
+                    "on-error-container": "#93000a",
+                    "surface-container-high": "#e6e8ea",
+                    "primary-container": "#2563eb",
+                    "secondary-fixed": "#dbe1ff",
+                    "surface-container-low": "#f2f4f6",
+                    "surface-tint": "#0053db",
+                    "on-secondary": "#ffffff",
+                    "on-primary-fixed-variant": "#003ea8",
+                    "on-tertiary-container": "#ffede6",
+                    "on-tertiary": "#ffffff",
+                    "inverse-surface": "#2d3133",
+                    "on-primary-fixed": "#00174b",
+                    "surface-variant": "#e0e3e5",
+                    "on-surface": "#191c1e",
+                    "on-surface-variant": "#434655",
+                    "on-error": "#ffffff",
+                    "background": "#f7f9fb",
+                    "secondary-container": "#acbfff",
+                    "surface-dim": "#d8dadc",
+                    "on-tertiary-fixed": "#360f00",
+                    "tertiary-container": "#bc4800",
+                    "surface-bright": "#f7f9fb",
+                    "primary-fixed-dim": "#b4c5ff",
+                    "primary-fixed": "#dbe1ff",
+                    "surface-container-lowest": "#ffffff",
+                    "on-tertiary-fixed-variant": "#7d2d00",
+                    "on-secondary-fixed-variant": "#31447b",
+                    "inverse-on-surface": "#eff1f3",
+                    "error-container": "#ffdad6"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "1.5rem",
+                    "full": "9999px"
+            },
+            "fontFamily": {
+                    "headline": ["Manrope"],
+                    "body": ["Inter"],
+                    "label": ["Inter"]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        body { font-family: 'Inter', sans-serif; background-color: #F7F9FB; color: #191C1E; }
+        .font-headline { font-family: 'Manrope', sans-serif; }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+            vertical-align: middle;
+        }
+        .tonal-layering { background: #F7F9FB; }
+        .no-border { border: none !important; }
+        .glass-header { backdrop-filter: blur(20px); background-color: rgba(247, 249, 251, 0.8); }
+        .status-pill { padding: 4px 12px; border-radius: 9999px; font-size: 0.75rem; font-weight: 600; }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-surface pb-32">
+<!-- TopAppBar -->
+<header class="fixed top-0 w-full z-50 backdrop-blur-md bg-opacity-80 bg-[#F7F9FB] flex justify-between items-center px-6 h-16 no-border tonal-layering">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-full bg-primary-container flex items-center justify-center overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="Close-up of a warm family portrait in soft natural lighting reflecting a caring atmosphere" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCo8taSQXz6gHXRM_EfZtcLdoIBVsVtPVRPVkrMtHT6Aho5MslqG2F3g4pd-UMajq-71cl3f_C88ggSjrLe0qekNODiAdwH_44-pFzh2LGs3Zz-YiLE8RMTbuEq5m_wdMViDntfRpLvPpS7FCmviNeSWiEfvLie0WTvLbHeKyAhctGacNNoz5J1uI8jR27GNPmtcGEDWhuW9CMxNvU_RbgzUKT_-t6qEb-OEdCm0Euma9k7QvLM34-Ox_PzfiS85ErBXfi8u0jPW5I8"/>
+</div>
+<span class="font-headline font-bold text-lg tracking-tight text-[#191C1E]">温馨一家</span>
+</div>
+<div class="flex items-center gap-2 text-[#2563EB] hover:bg-slate-200/50 transition-colors px-3 py-1.5 rounded-xl active:scale-95 duration-150 cursor-pointer">
+<span class="text-sm font-medium">切换家庭</span>
+<span class="material-symbols-outlined">expand_more</span>
+</div>
+</header>
+<main class="mt-20 px-4 space-y-8 max-w-2xl mx-auto">
+<!-- Metrics Grid (Bento Style) -->
+<section class="grid grid-cols-2 gap-4">
+<div class="bg-surface-container-lowest p-5 rounded-xl flex flex-col justify-between h-32 transition-all hover:bg-white border border-transparent hover:border-primary/10">
+<span class="text-on-surface-variant font-medium text-sm">家庭成员</span>
+<div class="flex items-baseline gap-1">
+<span class="font-headline text-4xl font-extrabold text-primary">3</span>
+<span class="text-on-surface-variant text-xs">位</span>
+</div>
+</div>
+<div class="bg-surface-container-lowest p-5 rounded-xl flex flex-col justify-between h-32 transition-all hover:bg-white border border-transparent hover:border-primary/10">
+<span class="text-on-surface-variant font-medium text-sm">药箱药品</span>
+<div class="flex items-baseline gap-1">
+<span class="font-headline text-4xl font-extrabold text-primary">5</span>
+<span class="text-on-surface-variant text-xs">种</span>
+</div>
+</div>
+<div class="bg-primary-container p-5 rounded-xl flex flex-col justify-between h-32 text-white shadow-[0_8px_20px_rgba(0,74,198,0.15)]">
+<span class="text-white/80 font-medium text-sm">今日待服</span>
+<div class="flex items-baseline gap-1">
+<span class="font-headline text-4xl font-extrabold">3</span>
+<span class="text-white/70 text-xs">次</span>
+</div>
+</div>
+<div class="bg-surface-container-lowest p-5 rounded-xl flex flex-col justify-between h-32 transition-all hover:bg-white border border-transparent hover:border-primary/10">
+<span class="text-on-surface-variant font-medium text-sm">周依从率</span>
+<div class="flex items-baseline gap-1">
+<span class="font-headline text-4xl font-extrabold text-[#008544]">92</span>
+<span class="text-on-surface-variant text-xs">%</span>
+</div>
+</div>
+</section>
+<!-- Expiry Alerts (临期药品预警) -->
+<section class="space-y-4">
+<div class="flex items-center justify-between">
+<h2 class="font-headline text-xl font-bold tracking-tight">临期药品预警</h2>
+<span class="text-primary text-sm font-semibold">查看全部</span>
+</div>
+<div class="grid grid-cols-1 gap-3">
+<div class="bg-surface-container-lowest p-4 rounded-xl flex items-center gap-4 border border-transparent hover:border-error/10">
+<div class="w-12 h-12 rounded-lg bg-error-container flex items-center justify-center text-error">
+<span class="material-symbols-outlined">warning</span>
+</div>
+<div class="flex-1">
+<div class="text-on-surface font-bold text-lg">阿司匹林肠溶片</div>
+<div class="text-on-surface-variant text-sm">失效日期: 2024-08-15</div>
+</div>
+<div class="bg-error-container text-on-error-container px-3 py-1 rounded-full text-xs font-bold">
+                        仅剩 12 天
+                    </div>
+</div>
+<div class="bg-surface-container-lowest p-4 rounded-xl flex items-center gap-4">
+<div class="w-12 h-12 rounded-lg bg-tertiary-fixed flex items-center justify-center text-tertiary">
+<span class="material-symbols-outlined">history</span>
+</div>
+<div class="flex-1">
+<div class="text-on-surface font-bold text-lg">氨氯地平片</div>
+<div class="text-on-surface-variant text-sm">失效日期: 2024-09-20</div>
+</div>
+<div class="bg-surface-container text-on-surface-variant px-3 py-1 rounded-full text-xs font-bold">
+                        1个月后
+                    </div>
+</div>
+</div>
+</section>
+<!-- Stock Alerts (库存不足提醒) -->
+<section class="space-y-4">
+<h2 class="font-headline text-xl font-bold tracking-tight">库存不足提醒</h2>
+<div class="bg-surface-container-lowest rounded-xl overflow-hidden divide-y divide-surface-container">
+<div class="p-4 flex items-center justify-between">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-tertiary">inventory_2</span>
+<span class="text-on-surface font-semibold">对乙酰氨基酚片</span>
+</div>
+<div class="flex items-center gap-2">
+<span class="text-error font-bold">1 盒</span>
+<span class="material-symbols-outlined text-on-surface-variant text-sm">arrow_forward_ios</span>
+</div>
+</div>
+<div class="p-4 flex items-center justify-between">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-tertiary">inventory_2</span>
+<span class="text-on-surface font-semibold">蒙脱石散</span>
+</div>
+<div class="flex items-center gap-2">
+<span class="text-error font-bold">2 盒</span>
+<span class="material-symbols-outlined text-on-surface-variant text-sm">arrow_forward_ios</span>
+</div>
+</div>
+</div>
+</section>
+<!-- Daily Schedule (今日服药) -->
+<section class="space-y-6 pb-12">
+<div class="flex items-center justify-between">
+<h2 class="font-headline text-xl font-bold tracking-tight">今日服药</h2>
+<div class="flex items-center gap-2 text-on-surface-variant text-sm">
+<span class="material-symbols-outlined text-sm">calendar_today</span>
+<span>2024年8月3日 星期六</span>
+</div>
+</div>
+<div class="relative space-y-6">
+<!-- Vertical Timeline Line -->
+<div class="absolute left-[23px] top-4 bottom-4 w-0.5 bg-surface-variant rounded-full"></div>
+<!-- Schedule Item 1 -->
+<div class="relative flex gap-6">
+<div class="z-10 w-12 flex flex-col items-center">
+<div class="w-12 h-12 rounded-full bg-primary flex items-center justify-center text-white ring-8 ring-surface shadow-lg">
+<span class="material-symbols-outlined">pill</span>
+</div>
+</div>
+<div class="flex-1 bg-surface-container-lowest p-5 rounded-xl border border-transparent hover:border-primary/20 transition-all">
+<div class="flex justify-between items-start mb-2">
+<span class="text-primary font-bold text-xl">07:30</span>
+<span class="bg-surface-container px-3 py-1 rounded-full text-xs font-bold text-primary">早饭前</span>
+</div>
+<div class="space-y-1 mb-4">
+<div class="text-on-surface font-bold text-lg">阿司匹林肠溶片</div>
+<div class="text-on-surface-variant flex items-center gap-2">
+<span class="material-symbols-outlined text-sm">medication</span>
+                                1 片 • 爷爷
+                            </div>
+</div>
+<button class="w-full bg-primary py-3 rounded-xl text-white font-bold text-sm transition-transform active:scale-95">
+                            确认服用
+                        </button>
+</div>
+</div>
+<!-- Schedule Item 2 -->
+<div class="relative flex gap-6 opacity-60">
+<div class="z-10 w-12 flex flex-col items-center">
+<div class="w-12 h-12 rounded-full bg-surface-variant flex items-center justify-center text-on-surface-variant ring-8 ring-surface">
+<span class="material-symbols-outlined">check_circle</span>
+</div>
+</div>
+<div class="flex-1 bg-surface-container-lowest p-5 rounded-xl">
+<div class="flex justify-between items-start mb-2">
+<span class="text-on-surface-variant font-bold text-xl">08:00</span>
+<span class="text-xs font-bold text-[#008544] flex items-center gap-1">
+<span class="material-symbols-outlined text-sm">verified</span> 已服用
+                            </span>
+</div>
+<div class="space-y-1 mb-2">
+<div class="text-on-surface font-bold text-lg">氨氯地平片</div>
+<div class="text-on-surface-variant">2 片 • 奶奶</div>
+</div>
+</div>
+</div>
+<!-- Schedule Item 3 -->
+<div class="relative flex gap-6">
+<div class="z-10 w-12 flex flex-col items-center">
+<div class="w-12 h-12 rounded-full bg-white border-2 border-primary flex items-center justify-center text-primary ring-8 ring-surface">
+<span class="material-symbols-outlined">schedule</span>
+</div>
+</div>
+<div class="flex-1 bg-surface-container-lowest p-5 rounded-xl">
+<div class="flex justify-between items-start mb-2">
+<span class="text-on-surface font-bold text-xl">12:00</span>
+<span class="bg-surface-container px-3 py-1 rounded-full text-xs font-bold text-primary">午饭后</span>
+</div>
+<div class="space-y-1 mb-4">
+<div class="text-on-surface font-bold text-lg">二甲双胍</div>
+<div class="text-on-surface-variant">1 片 • 爷爷</div>
+</div>
+<button class="w-full border-2 border-primary text-primary py-3 rounded-xl font-bold text-sm transition-transform active:scale-95">
+                            待服用
+                        </button>
+</div>
+</div>
+<!-- Schedule Item 4 -->
+<div class="relative flex gap-6">
+<div class="z-10 w-12 flex flex-col items-center">
+<div class="w-12 h-12 rounded-full bg-white border-2 border-surface-variant flex items-center justify-center text-on-surface-variant ring-8 ring-surface">
+<span class="material-symbols-outlined">bedtime</span>
+</div>
+</div>
+<div class="flex-1 bg-surface-container-lowest p-5 rounded-xl">
+<div class="flex justify-between items-start mb-2">
+<span class="text-on-surface font-bold text-xl">20:00</span>
+<span class="bg-surface-container px-3 py-1 rounded-full text-xs font-bold text-primary">睡前</span>
+</div>
+<div class="space-y-1">
+<div class="text-on-surface font-bold text-lg">阿托伐他汀</div>
+<div class="text-on-surface-variant">1 片 • 爷爷</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- BottomNavBar -->
+<nav class="fixed bottom-0 left-0 w-full flex justify-around items-center h-20 px-4 pb-safe bg-white/90 dark:bg-slate-950/90 rounded-t-3xl z-50 border-t border-slate-100 shadow-[0_-4px_24px_rgba(0,74,198,0.08)]">
+<a class="flex flex-col items-center justify-center text-[#2563EB] font-bold scale-110 transition-transform" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">home</span>
+<span class="font-label font-medium text-[10px]">Home</span>
+</a>
+<a class="flex flex-col items-center justify-center text-slate-400 hover:text-[#2563EB] transition-all" href="#">
+<span class="material-symbols-outlined">pill</span>
+<span class="font-label font-medium text-[10px]">Medicine Box</span>
+</a>
+<a class="flex flex-col items-center justify-center text-slate-400 hover:text-[#2563EB] transition-all" href="#">
+<span class="material-symbols-outlined">analytics</span>
+<span class="font-label font-medium text-[10px]">Health Report</span>
+</a>
+<a class="flex flex-col items-center justify-center text-slate-400 hover:text-[#2563EB] transition-all" href="#">
+<span class="material-symbols-outlined">person</span>
+<span class="font-label font-medium text-[10px]">Profile</span>
+</a>
+</nav>
+</body></html>
